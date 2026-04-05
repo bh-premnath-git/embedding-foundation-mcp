@@ -92,22 +92,23 @@ The same concept (e.g., cosine similarity, gradient descent, Bayes theorem, DAG 
 
 ---
 
-- **learn**: Adaptive, multi-level teaching (L1 intuition → L4 AI-system application)
-- **compute**: Exact, efficient execution (sync/async/job paths)
-- **verify**: Deterministic, schema-validated correctness
-- **visualize**: Intuitive, pedagogical visuals (Python-side)
-- **reason**: Explanatory, comparative, and system-mapping logic
+## MCP Model
 
-## Multi-Level Topic Support
+MCP is easiest to reason about as three roles:
 
-Every concept/tool supports:
-- **L1**: Intuition
-- **L2**: Worked example
-- **L3**: Formal/math depth
-- **L4**: AI-system application
+- **Host**: The application that the user is working in. Examples include an IDE, chat surface, or agent runtime.
+- **Client**: The MCP-aware connector inside the host that discovers tools/resources and sends requests.
+- **Server**: The system that implements MCP capabilities and returns structured results.
 
-The same concept (e.g., cosine similarity, gradient descent, Bayes theorem, DAG scheduling, HNSW) supports both exact execution and adaptive teaching.
+In this project:
 
+- the **host** is whichever MCP-compatible environment connects to this project
+- the **client** is the MCP integration used by that host
+- this repository provides the **server**, including the teaching, compute, verification, visualization, and reasoning capabilities
+
+That separation matters because this project should stay host-agnostic: stable MCP contracts on the server side, no assumptions about any one UI or client runtime.
+
+---
 
 ## Architecture Overview
 
@@ -285,6 +286,11 @@ User asks: “Teach cosine similarity at L2, compute for these vectors, explain 
 
 ## Design
 
+- Host-agnostic
+- Typed
+- Deterministic
+- Observable
+
 ---
 
 ## Contributing
@@ -315,8 +321,3 @@ Contributions are welcome! Please open issues or pull requests for features, bug
 - [OpenTelemetry](https://opentelemetry.io/)
 
 ---
-
-- Host-agnostic
-- Typed
-- Deterministic
-- Observable

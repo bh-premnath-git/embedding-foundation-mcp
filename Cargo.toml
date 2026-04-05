@@ -1,0 +1,28 @@
+[workspace]
+members = [
+    "apps/worker-rust",
+    "crates/foundation-core",
+    "crates/foundation-graph",
+    "crates/foundation-linalg",
+    "crates/foundation-retrieval",
+    "crates/foundation-python",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Embedding Foundation MCP"]
+
+[workspace.dependencies]
+anyhow = "1.0"
+ndarray = "0.16"
+petgraph = "0.6"
+pyo3 = { version = "0.23", features = ["extension-module"] }
+rayon = "1.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.44", features = ["macros", "rt-multi-thread", "signal"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }

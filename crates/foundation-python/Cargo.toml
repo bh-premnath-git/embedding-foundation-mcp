@@ -1,0 +1,13 @@
+[package]
+name = "foundation-python"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "foundation_python"
+crate-type = ["cdylib"]
+
+[dependencies]
+foundation-linalg = { path = "../foundation-linalg" }
+pyo3.workspace = true
