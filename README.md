@@ -29,7 +29,7 @@ Modern AI engineering requires more than just vector math or generic tutoring. T
 
 ```sh
 # Clone the repo
-git clone https://github.com/your-org/embedding-foundation-mcp.git
+git clone https://github.com/bh-premnath-git/embedding-foundation-mcp
 cd embedding-foundation-mcp
 
 # (Optional) Set up Python venv
